@@ -12,9 +12,9 @@ module.exports = function (app) {
       const num = convertHandler.getNum(input);
       const unit = convertHandler.getUnit(input);
 
-      if (num === null && unit === null) return res.json('invalid number and unit');
-      if (num === null) return res.json('invalid number');
-      if (unit === null) return res.json('invalid unit');
+      if (num === null && unit === null) return res.send('invalid number and unit');
+      if (num === null) return res.send('invalid number');
+      if (unit === null) return res.send('invalid unit');
 
       const returnUnit = convertHandler.getReturnUnit(unit);
       const returnNum = convertHandler.convert(num, unit);
